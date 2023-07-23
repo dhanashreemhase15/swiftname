@@ -1,0 +1,64 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myapp</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <script src="{% static 'js/external.js' %}" ></script>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <button onclick="click_fun()">click me</button><br>
+    <img src="{% static 'images/image1.png' %}" alt="" width="200px" height="160px"> 
+    <p>Name:{{name}}</p>
+    <p>Length : {{name | length}}</p>
+    <p>Uppercase: {{name | upper}}</p>
+    <p>Lowercase: {{name | lower}}</p>
+    <p>Date: {{cdt}}</p>
+    <p>{{cdt | date:"d-m-y"}}</p>
+    <p>{{cdt | date:"d-m-Y"}}</p>
+    <p>{{cdt | date:"d/m/y"}}</p>
+    <p>{{cdt | date:"d, M Y"}}</p>
+    <p>{{cdt | date:"D, F Y"}}</p>
+
+
+    {% comment%}
+    <p>{{x}}</p> 
+    {{y}} <br>
+    <!----   160>100=> True-->
+    
+    {% if x > y %}   
+        <p>{{x}} is greater</p>
+    {% else %}
+        <p>{{y}} is greater</p>
+    {% endif %}
+    
+
+    <p>List : {{l}}</p>
+    <p>Tuple: {{t}}</p>
+    <p>Set : {{s}}</p>
+    <p>Dictionary: {{d}}</p>
+    {% for i,j in d.items %}
+        {{i}} - {{j}}<br>
+        
+    {% endfor %}
+    {% endcomment %}
+    <table border="1">
+        <tr><th>Sr. No.</th>
+            <th>Keys</th>
+            <th>Values</th>
+        </tr>
+        {% for i,j in d.items %}
+        <tr><td>{{forloop.counter}}</td>
+            <td>{{i}}</td>
+            <td>{{j}}</td>
+        </tr>       
+        
+        {% endfor %}
+
+    </table>
+    
+</body>
+</html>

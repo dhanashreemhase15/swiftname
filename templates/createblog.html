@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>BLOG|CREATE</title>
+    </head>
+    <body>
+            <form method="POST" action="/store">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>Heading:</td>
+                        <td><input type="text" name="bhead" /></td>
+                    </tr>
+                    <tr>
+                        <td>category:</td>
+                        <td><input type="text" name="bcat" /></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><textarea name="bdesc" cols="20" rows="5" ></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" name="send" value="POST" /></td>
+                    </tr>
+                </table>
+            
+            </form>
+    </body>
+</html>
